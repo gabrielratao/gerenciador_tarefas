@@ -51,7 +51,9 @@ class Data():
         self._tasks[task.getTaskId()] = task
     
     def getData(self):
-        return self._tasks
+        for id, values in self._tasks.items():
+            print(values)
+        #return self._tasks
     
     def existId(self, id):
         isKey = False
@@ -72,6 +74,7 @@ class Data():
     def removeTaksById(self, id):
         if self.existId(id):
             self._tasks.pop(id)
+            print(f'Task {id} removida com sucesso')
         else:
             print('Não existe essa Task')
     
@@ -85,7 +88,6 @@ class Data():
         
 
     def __str__(self):
-        
         return f'{self._tasks}'
 
 
